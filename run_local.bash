@@ -7,8 +7,8 @@
 # 2. Clone drake into the path specified in $WORKSPACE.
 # 3. Run this script.
 
-export compiler=gcc
-export generator=ninja
+export compiler=xenial-gcc-32bit
+export generator=
 export coverage=false
 export debug=false
 export documentation=false
@@ -22,7 +22,7 @@ export track=experimental
 export BUILD_ID=0
 export JOB_NAME="unix-${compiler}-experimental"
 export NODE_NAME=$(hostname -s)
-export WORKSPACE="${HOME}/workspace/${JOB_NAME}"
+export WORKSPACE="${HOME}/drake-distro"
 
 export PATH="/usr/local/bin:${PATH}"
 

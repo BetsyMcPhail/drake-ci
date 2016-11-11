@@ -10,7 +10,8 @@
 #                                     "include-what-you-use" |
 #                                     "link-what-you-use" |
 #                                     "cpplint" |
-#                                     "xenial-gcc" | "xenial-clang"
+#                                     "xenial-gcc" | "xenial-clang" |
+#                                     "xenial-gcc-32bit"
 #   ENV{coverage}         optional    boolean
 #   ENV{debug}            optional    boolean
 #   ENV{documentation}    optional    boolean | "publish"
@@ -218,6 +219,15 @@ set(DASHBOARD_POSITION_INDEPENDENT_CODE OFF)
 set(DASHBOARD_SHARED_LINKER_FLAGS "")
 set(DASHBOARD_STATIC_LINKER_FLAGS "")
 set(DASHBOARD_VERBOSE_MAKEFILE OFF)
+
+if(COMPILER MATCHES "^xenial-gcc-32bit")
+  set(DASHBOARD_C_FLAGS "-m32")
+  set(DASHBOARD_CXX_FLAGS "-m32")
+  set(DASHBOARD_FORTRAN_FLAGS "-m32")
+#  set(DASHBOARD_SHARED_LINKER_FLAGS "-m32")
+#  set(DASHBOARD_STATIC_LINKER_FLAGS "-m32")
+endif()
+
 
 if(COMPILER MATCHES "^include-what-you-use")
   set(DASHBOARD_INSTALL OFF)
