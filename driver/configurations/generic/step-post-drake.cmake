@@ -3,8 +3,7 @@ set(CTEST_BINARY_DIRECTORY "${DASHBOARD_BINARY_DIRECTORY}")
 
 # Switch the dashboard (back) to the drake superbuild dashboard
 begin_stage(
-  URL_NAME "Superbuild"
-  PROJECT_NAME "drake-superbuild"
+  PROJECT_NAME "Drake"
   BUILD_NAME "${DASHBOARD_BUILD_NAME}-post-drake")
 
 # Reconfigure the build, turning on post-drake externals

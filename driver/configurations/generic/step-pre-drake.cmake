@@ -4,8 +4,7 @@ notice("CTest Status: CONFIGURING / BUILDING SUPERBUILD")
 
 # Set up parameters for dashboard submission
 begin_stage(
-  URL_NAME "Superbuild"
-  PROJECT_NAME "drake-superbuild"
+  PROJECT_NAME "Drake"
   BUILD_NAME "${DASHBOARD_BUILD_NAME}-pre-drake")
 
 # Update the sources
@@ -21,6 +20,8 @@ ctest_configure(BUILD "${CTEST_BINARY_DIRECTORY}"
 if(NOT DASHBOARD_SUPERBUILD_CONFIGURE_RETURN_VALUE EQUAL 0)
   append_step_status("CONFIGURE SUPERBUILD (PRE-DRAKE)" FAILURE)
 endif()
+
+include(${CTEST_BINARY_DIRECTORY}/CTestSubprojects.cmake)
 
 # Run the build
 ctest_build(BUILD "${CTEST_BINARY_DIRECTORY}" APPEND
