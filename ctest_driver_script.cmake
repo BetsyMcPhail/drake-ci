@@ -14,6 +14,7 @@
 #   ENV{everything}       optional    boolean
 #   ENV{generator}        optional    "bazel" | "make" | "ninja" | "xcode"
 #   ENV{ghprbPullId}      optional    value for CTEST_CHANGE_ID
+#   ENV{m32}              optional    boolean
 #   ENV{matlab}           optional    boolean
 #   ENV{memcheck}         optional    "asan" | "lsan" | "msan" | "tsan" |
 #                                     "ubsan" | "valgrind"

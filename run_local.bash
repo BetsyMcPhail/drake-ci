@@ -15,6 +15,7 @@ export documentation=false
 export everything=false
 export matlab=false
 export minimal=false
+export m32=false
 export openSource=true
 export provision=false
 export ros=false
